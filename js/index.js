@@ -8,6 +8,7 @@
 //
 //it's not that big of a deal, tho, since I'm still learning
 
+
 function initInterstitial(){
     let startBod = document.createElement("body");
     document.body = startBod;
@@ -27,10 +28,23 @@ window.addEventListener("load", (event) => {
         if (transOpaque <= 0){
             //finished
             clearInterval(id);
-            document.body = defaultDoc;
+            //return;
+            transToNormal();
         } else {
             transOpaque--;
             document.body.style.opacity = (transOpaque/100);
         }
     }
 });
+
+function transToNormal(){
+    document.body = defaultDoc;
+
+
+    //upon mouseover header image, fade to a different image
+    console.log(document.getElementsByClassName("intro"));
+    let sandBus = document.getElementsByClassName("intro").item(0).firstElementChild;
+    console.log(sandBus);
+    sandBus.src = "sdfdsfsd.jpg";
+    //debugger;
+}
