@@ -38,13 +38,12 @@ window.addEventListener("load", (event) => {
 });
 
 function transToNormal(){
+    //I need to do this function for everything that is not the interstitial due to asynchronous functions
     document.body = defaultDoc;
 
-
     //upon mouseover header image, fade to a different image
-    console.log(document.getElementsByClassName("intro"));
     let sandBus = document.getElementsByClassName("intro").item(0).firstElementChild;
-    console.log(sandBus);
-    sandBus.src = "sdfdsfsd.jpg";
-    //debugger;
+    sandBus.addEventListener("mouseover", (event) => {
+        sandBus.src = "sdfdsfsd.jpg";
+    });
 }
